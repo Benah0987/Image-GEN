@@ -9,7 +9,7 @@ const Container = styled.div`
 
 function CreatePost() {
   return (
-    <Container>Home</Container>
+    <Container>CreatePost</Container>
   
   )
 }

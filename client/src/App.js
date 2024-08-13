@@ -5,7 +5,6 @@ import CreatePost from "./pages/CreatePost";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
-// Global styles to apply the dark theme across the entire application
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
