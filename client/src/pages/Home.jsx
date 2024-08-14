@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import SearchBar from '../components/SearchBar';
+import ImageCard from '../components/ImageCard';
 
 const Container = styled.div`
  height: 100%;
@@ -30,7 +31,7 @@ flex-direction: column;
 @media (max-width: 600px) {
     font-size: 22px;
   }`
-
+;
 const Span = styled.div`
 font-size: 30px;
 font-weight: 800;
@@ -40,7 +41,31 @@ display: flex;
 
 flex-direction: column;
 
-`  
+` ;
+
+const Wrapper =styled.div`
+background: red;
+width: 100%;
+max-width: 1400px;
+padding: 32px 0px;
+display: flex;
+justify-content: center;
+
+`;
+
+const CardWrapper = styled.div`
+  display: grid;
+  gap: 20px;
+  @media (max-width: 1200px) {
+  grid-template-columns: repeat(4, 1fr)};
+
+  @media (min-width: 640px) (max-width: 1198px) {
+  grid-template-columns: repeat(3, 1fr)}
+
+   @media  (max-width: 639px) {
+  grid-template-columns: repeat(3, 1fr)}
+  `
+   ;
 
 function Home() {
   return (
@@ -49,6 +74,12 @@ function Home() {
         <Span>Generated with AI</Span>
       </Headline>
       <SearchBar/>
+      <Wrapper>
+        <CardWrapper>
+          <ImageCard />
+        </CardWrapper>
+      </Wrapper>
+
     </Container>
   )
 }
