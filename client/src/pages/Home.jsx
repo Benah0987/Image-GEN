@@ -43,7 +43,7 @@ const Span = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background: red;
+
   width: 100%;
   max-width: 1400px;
   padding: 32px 0px;
