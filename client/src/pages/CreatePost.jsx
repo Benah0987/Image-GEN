@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import GenerateImageForm from '../components/GenerateImageForm';
+import GeneratedImageCard from '../components/GeneratedImageCard';
 
 const Container = styled.div`
   height: 100%;
   overflow-y: scroll;
   padding: 30px 30px;
+  min-height: 300px;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
@@ -20,7 +22,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-flex: 1;
+width: 100%;
 height: fit-content
 gap: 8%;
 max-width: 1200px;
@@ -34,10 +36,28 @@ justify-content: center;
 
 
 function CreatePost() {
+  const [createPostLoading, setCreatePostLoading ] = useState(false)
+  const [generateImageLoading, setGenerateImageLoading ] = useState(false)
+  const [ post, setPost ] = useState ({
+    name: "",
+    prompt: " ",
+    photo: " ",
+  })
+
+
   return (
     <Container>
       <Wrapper>
-        <GenerateImageForm />
+        <GenerateImageForm 
+        post ={post} 
+        setPost ={setPost} 
+        createPostLoading = {createPostLoading} 
+        generateImageLoading ={generateImageLoading}
+        setGenerateImageLoading ={setGenerateImageLoading}
+        setCreatePostLoading = {setCreatePostLoading}
+        
+        />
+        <GeneratedImageCard src={post?.photo} loading = {generateImageLoading}/>
       </Wrapper>
     </Container>
   
